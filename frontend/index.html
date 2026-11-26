@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIFE TODAY — AI NEWSROOM</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand-header">
+      <div class="brand-logo">LT</div>
+      <div class="brand-info">
+        <h1>LIFE TODAY</h1>
+        <p>AI Newsroom V1.0</p>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li class="nav-item active" data-tab="overview">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+        <span>Tổng quan</span>
+      </li>
+      <li class="nav-item" data-tab="hunter">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <span>Săn tin & Quét</span>
+      </li>
+      <li class="nav-item" data-tab="articles">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+        <span>Kho tin mới</span>
+      </li>
+      <li class="nav-item" data-tab="pending">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+        <span>Bài chờ duyệt</span>
+      </li>
+      <li class="nav-item" data-tab="scheduled">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        <span>Lịch đăng Facebook</span>
+      </li>
+      <li class="nav-item" data-tab="published">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span>Bài đã xuất bản</span>
+      </li>
+      <li class="nav-item" data-tab="media">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+        <span>Thư viện ảnh HD</span>
+      </li>
+      <li class="nav-item" data-tab="sources">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Quản lý nguồn tin</span>
+      </li>
+      <li class="nav-item" data-tab="analytics">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+        <span>Content Mix & Thống kê</span>
+      </li>
+      <li class="nav-item" data-tab="settings">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        <span>Cài đặt & AI</span>
+      </li>
+      <li class="nav-item" data-tab="logs">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        <span>Nhật ký kiểm toán</span>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div style="font-size:11px; color:var(--text-dim); margin-bottom:6px;">CHẾ ĐỘ VẬN HÀNH:</div>
+      <div id="sidebar-mode-badge" class="mode-badge badge-warning">SHADOW_MODE</div>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h2 id="page-title-text" class="page-title">Tổng quan phòng tin Life Today</h2>
+      </div>
+      <div class="topbar-right">
+        <button id="btn-top-scan" class="btn btn-primary">🔍 Quét tin ngay</button>
+        <button id="btn-top-clean" class="btn btn-secondary">🧹 Dọn dẹp rác</button>
+        <button id="btn-emergency-stop" class="btn btn-secondary">🛡️ Dừng khẩn cấp</button>
+      </div>
+    </header>
+
+    <div class="content-body">
+      <!-- TAB 1: OVERVIEW -->
+      <section id="tab-overview" class="tab-pane active">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-title">Kho tin tức (24h)</div>
+            <div id="stat-articles" class="stat-value">0</div>
+            <div class="stat-desc">Chỉ giữ tin mới trong 24 giờ</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Bài chờ duyệt</div>
+            <div id="stat-pending" class="stat-value">0</div>
+            <div class="stat-desc">Đã qua Fact-Check & Caption AI</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Đã xếp lịch</div>
+            <div id="stat-scheduled" class="stat-value">0</div>
+            <div class="stat-desc">Các khung giờ 07:30, 10:00, 12:00...</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Đã xuất bản</div>
+            <div id="stat-published" class="stat-value">0</div>
+            <div class="stat-desc">Đăng lên fanpage Life Today</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-title">Dung lượng ổ đĩa</div>
+            <div id="stat-storage" class="stat-value">0 MB</div>
+            <div class="stat-desc">Tự động dọn rác, không đầy ổ</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Bộ công cụ quét tin tức đa chuyên mục</div>
+          </div>
+          <div class="scanner-toolbar">
+            <button class="scan-btn" data-time="30m">Tin 30 phút</button>
+            <button class="scan-btn" data-time="1h">Tin 1 giờ</button>
+            <button class="scan-btn" data-time="3h">Tin 3 giờ</button>
+            <button class="scan-btn" data-time="6h">Tin 6 giờ</button>
+            <button class="scan-btn" data-time="today">Tin hôm nay</button>
+            <button class="scan-btn" data-time="24h">Tin 24 giờ</button>
+            <button class="scan-btn" data-cat="Showbiz">Quét Showbiz</button>
+            <button class="scan-btn" data-cat="Phim ảnh">Quét Phim ảnh</button>
+            <button class="scan-btn" data-cat="Âm nhạc">Quét Âm nhạc</button>
+            <button class="scan-btn" data-cat="Thời trang và làm đẹp">Quét Thời trang</button>
+            <button class="scan-btn" data-cat="Du lịch">Quét Du lịch</button>
+            <button class="scan-btn" data-cat="Ẩm thực">Quét Ẩm thực</button>
+            <button class="scan-btn" data-cat="Văn hóa và nghệ thuật">Quét Văn hóa</button>
+            <button class="scan-btn" data-cat="Trending">Quét Trending</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Bài viết mới cần duyệt biên tập</div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Chuyên mục</th>
+                  <th>Nội dung Caption & Hashtag</th>
+                  <th>Trạng thái & Lịch</th>
+                  <th>Liên kết</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="pending-posts-table-body">
+                <tr><td colspan="6" style="text-align:center; padding:24px; color:var(--text-dim)">Đang tải dữ liệu...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: HUNTER -->
+      <section id="tab-hunter" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Bảng điều khiển News Hunter</div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+            News Hunter quét tin tự động từ các nguồn chính thức của nghệ sĩ, ban tổ chức, thương hiệu thời trang, và hãng thông tấn quốc tế (Việt Nam, Hàn Quốc, Trung Quốc, Hollywood, Châu Âu).
+          </p>
+          <div class="scanner-toolbar">
+            <button class="scan-btn" data-time="30m">Tin 30 phút</button>
+            <button class="scan-btn" data-time="1h">Tin 1 giờ</button>
+            <button class="scan-btn" data-time="6h">Tin 6 giờ</button>
+            <button class="scan-btn" data-cat="Showbiz">Showbiz</button>
+            <button class="scan-btn" data-cat="Thời trang và làm đẹp">Thời trang & Làm đẹp</button>
+            <button class="scan-btn" data-cat="Du lịch">Du lịch</button>
+            <button class="scan-btn" data-cat="Phim ảnh">Phim ảnh</button>
+            <button class="scan-btn" data-cat="Âm nhạc">Âm nhạc</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: ARTICLES -->
+      <section id="tab-articles" class="tab-pane">
+        <div class="card">
+          <div class="card-header" style="flex-wrap:wrap; gap:12px;">
+            <div>
+              <div class="card-title">Kho tin tức Báo chí Chính thống Việt Nam</div>
+              <div style="font-size:12px; color:var(--text-muted); margin-top:2px;">100% Tiếng Việt • Giải trí, Thời trang, Du lịch, Ẩm thực • Tuyệt đối không chính trị, xã hội</div>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <button class="btn btn-sm btn-primary btn-filter-cat" data-cat="">Tất cả</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Showbiz">🌟 Showbiz</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Thời trang và làm đẹp">👗 Thời trang</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Du lịch">✈️ Du lịch</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Ẩm thực">🍜 Ẩm thực</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Phim ảnh">🎬 Phim ảnh</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Âm nhạc">🎵 Âm nhạc</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Văn hóa và nghệ thuật">🎨 Văn hóa</button>
+              <button class="btn btn-sm btn-secondary btn-filter-cat" data-cat="Trending">🔥 Trending</button>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Tiêu đề & Nguồn</th>
+                  <th>Chuyên mục</th>
+                  <th>Điểm Trend</th>
+                  <th>Trạng thái</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="articles-table-body">
+                <tr><td colspan="7" style="text-align:center; padding:24px; color:var(--text-dim)">Đang tải kho tin tức...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: PENDING -->
+      <section id="tab-pending" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Danh sách bài viết chờ duyệt (Pending Review)</div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Chuyên mục</th>
+                  <th>Nội dung Caption & Hashtag</th>
+                  <th>Trạng thái & Lịch</th>
+                  <th>Liên kết</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="pending-posts-table-body-2">
+                <!-- Shared with pending -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: SCHEDULED -->
+      <section id="tab-scheduled" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Lịch đăng bài Facebook tự động (Smart Scheduler)</div>
+          </div>
+          <div style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+            Các khung giờ vàng đăng bài hàng ngày (Asia/Ho_Chi_Minh): <strong>07:30</strong> • <strong>10:00</strong> • <strong>12:00</strong> • <strong>15:00</strong> • <strong>18:00</strong> • <strong>20:30</strong>.
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Chuyên mục</th>
+                  <th>Caption</th>
+                  <th>Khung giờ & Thời gian hẹn</th>
+                  <th>Liên kết</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="scheduled-posts-table-body">
+                <tr><td colspan="6" style="text-align:center; padding:24px; color:var(--text-dim)">Đang tải lịch đăng...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: PUBLISHED -->
+      <section id="tab-published" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Bài viết đã xuất bản (Facebook Live & Shadow Posts)</div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Chuyên mục</th>
+                  <th>Caption</th>
+                  <th>Trạng thái</th>
+                  <th>Facebook Post ID / Link</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="published-posts-table-body">
+                <tr><td colspan="6" style="text-align:center; padding:24px; color:var(--text-dim)">Đang tải bài viết...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: MEDIA -->
+      <section id="tab-media" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Thư viện ảnh gốc HD & Kiểm duyệt quyền sử dụng (Media Rights)</div>
+          </div>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+            Tất cả hình ảnh được kiểm định độ phân giải (cạnh ngắn ≥ 1080px), độ sắc nét bằng Pillow, băm SHA-256 chống trùng và kiểm duyệt bản quyền theo Nghị định 147/2024/NĐ-CP và Điều 32 Bộ luật Dân sự.
+          </p>
+          <div id="media-grid-container" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:18px;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 8: SOURCES -->
+      <section id="tab-sources" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Danh mục nguồn tin (Source Registry)</div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã nguồn</th>
+                  <th>Tên nguồn & URL</th>
+                  <th>Quốc gia</th>
+                  <th>Chuyên mục</th>
+                  <th>Độ tin cậy</th>
+                  <th>Trạng thái kết nối</th>
+                  <th>Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="sources-table-body">
+                <tr><td colspan="7" style="text-align:center; padding:24px; color:var(--text-dim)">Đang tải nguồn tin...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 9: ANALYTICS -->
+      <section id="tab-analytics" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Theo dõi tỷ trọng Content Mix (7 ngày & 30 ngày)</div>
+          </div>
+          <div id="analytics-mix-container" style="margin-top:16px;">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 10: SETTINGS -->
+      <section id="tab-settings" class="tab-pane">
+        <div class="card" style="max-width:700px;">
+          <div class="card-header">
+            <div class="card-title">Cài đặt vận hành & Cấu hình AI / Facebook</div>
+          </div>
+          <form id="form-settings">
+            <div class="form-group">
+              <label class="form-label">Chế độ vận hành (Operating Mode)</label>
+              <select id="setting-operating-mode" class="form-control">
+                <option value="SHADOW_MODE">SHADOW_MODE (Mặc định: Chạy toàn bộ quy trình, không xuất bản thật)</option>
+                <option value="MANUAL">MANUAL (AI tạo bài, con người duyệt và xuất bản thủ công)</option>
+                <option value="SEMI_AUTO">SEMI_AUTO (AI tự săn tin & tạo bài; con người duyệt 1 lần trước khi xếp lịch)</option>
+                <option value="FULL_AUTO">FULL_AUTO (Tự động hoàn toàn khi đủ 100% điều kiện an toàn & bản quyền)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Meta Facebook Page ID (lifetoday.vn)</label>
+              <input type="text" id="setting-meta-page-id" class="form-control" placeholder="Nhập Facebook Page ID">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Meta Page Access Token</label>
+              <input type="password" id="setting-meta-token" class="form-control" placeholder="Nhập Page Access Token">
+              <div id="meta-token-status" style="font-size:12px; margin-top:6px; font-weight:500;"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Gemini API Key (Free Tier)</label>
+              <input type="password" id="setting-gemini-key" class="form-control" placeholder="Nhập Google Gemini API Key">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Ollama Host (Local AI Engine)</label>
+              <input type="text" id="setting-ollama-host" class="form-control" value="http://localhost:11434">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:10px;">Lưu cài đặt hệ thống</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- TAB 11: LOGS -->
+      <section id="tab-logs" class="tab-pane">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Nhật ký kiểm toán an toàn (Audit Logs)</div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Thời gian</th>
+                  <th>Phân hệ</th>
+                  <th>Hành động</th>
+                  <th>Chi tiết kiểm toán</th>
+                </tr>
+              </thead>
+              <tbody id="logs-table-body">
+                <tr><td colspan="4" style="text-align:center; padding:24px; color:var(--text-dim)">Đang tải nhật ký...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Post Modal -->
+  <div id="modal-post" class="modal-overlay">
+    <div class="modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+        <h3 style="font-size:16px;">Chỉnh sửa bài viết #<span id="modal-post-id"></span></h3>
+        <button id="btn-modal-close" style="background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Chuyên mục</label>
+        <input type="text" id="modal-post-category" class="form-control" disabled>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Ảnh đính kèm sẽ đăng lên Facebook</label>
+        <div id="modal-post-image-container" style="background:#0b1120; border:1px solid rgba(255,255,255,0.08); border-radius:8px; padding:10px; text-align:center; min-height:80px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+          <img id="modal-post-image-preview" src="" style="max-height:200px; max-width:100%; border-radius:6px; object-fit:contain; display:none;" />
+          <span id="modal-post-no-image" style="color:var(--text-dim); font-size:12px;">Không có hình ảnh đính kèm (Bài viết dạng chữ)</span>
+          <div id="modal-post-image-url-text" style="font-size:10px; color:var(--text-dim); margin-top:6px; word-break:break-all;"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <label class="form-label" style="margin-bottom:0;">Nội dung Caption (1–3 câu, tinh tế, thẩm mỹ)</label>
+          <button type="button" id="btn-modal-ai-rewrite" class="btn btn-sm" style="background:linear-gradient(135deg, #6366f1, #a855f7); color:white; border:none; padding:4px 12px; font-size:12px; font-weight:600; border-radius:6px; cursor:pointer; display:flex; align-items:center; gap:4px;">
+            ✨ AI Viết lại Caption
+          </button>
+        </div>
+        <textarea id="modal-post-caption" class="form-control" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Hashtags (Bao gồm #LifeToday)</label>
+        <input type="text" id="modal-post-hashtags" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+          <label class="form-label" style="margin-bottom:0;">Đường link bài báo gốc</label>
+          <button type="button" id="btn-modal-insert-link" class="btn btn-sm btn-secondary" style="font-size:11px; padding:2px 8px; cursor:pointer;">
+            ➕ Chèn link vào cuối bài
+          </button>
+        </div>
+        <div id="modal-post-source-link-container" style="font-size:12px; margin-top:4px;">
+          <a id="modal-post-source-link" href="#" target="_blank" style="color:var(--accent); text-decoration:underline; word-break:break-all;"></a>
+          <span id="modal-post-no-link" style="color:var(--text-dim); font-size:11px; display:none;">Không có link bài gốc</span>
+          <div style="font-size:11px; color:#10b981; margin-top:4px;">
+            💡 Hệ thống đã <strong>tự động gắn link bài gốc</strong> vào cuối caption khi tạo bài (và tự thử thêm bình luận đầu tiên nếu Meta cho phép) để người đọc xem trọn vẹn bài báo.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Ghi chú nguồn / Credit</label>
+        <input type="text" id="modal-post-credit" class="form-control">
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+        <button type="button" id="btn-modal-delete" class="btn btn-danger" style="background:#ef4444; color:#fff; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;">🗑️ Xóa bài viết</button>
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-secondary" onclick="document.getElementById('modal-post').classList.remove('active')">Hủy</button>
+          <button id="btn-modal-save" class="btn btn-primary">Lưu thay đổi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional PIN Lock Overlay (only shown on Cloud when ACCESS_PIN is configured) -->
+  <div id="pin-lock-overlay" style="display:none; position:fixed; inset:0; background:rgba(10,14,26,0.96); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#131b2e; border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:32px; max-width:380px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+      <div style="font-size:36px; margin-bottom:10px;">🔐</div>
+      <h2 style="font-size:18px; margin-bottom:6px; color:#fff;">Phòng tin Life Today</h2>
+      <p style="font-size:13px; color:#94a3b8; margin-bottom:20px;">Nhập mã PIN một lần để truy cập (trình duyệt sẽ tự ghi nhớ cho lần sau)</p>
+      <input type="password" id="pin-lock-input" class="form-control" placeholder="Nhập mã PIN..." style="text-align:center; font-size:18px; letter-spacing:4px; margin-bottom:12px;" />
+      <div id="pin-lock-error" style="color:#ef4444; font-size:12px; min-height:18px; margin-bottom:10px;"></div>
+      <button id="btn-pin-submit" class="btn btn-primary" style="width:100%; padding:10px; font-weight:600;">Vào phòng tin</button>
+    </div>
+  </div>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

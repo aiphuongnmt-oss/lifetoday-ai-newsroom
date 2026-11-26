@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.env
+*.db
+*.db-wal
+*.db-shm
+backend/data/lifetoday.db*
+backend/data/media/*
+cloudflared.exe
+*.zip
+*.bat
+tests/
+docs/
